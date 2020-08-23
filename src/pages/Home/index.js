@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, SafeAreaView, View, ScrollView} from 'react-native';
+import {Text, SafeAreaView, View, ScrollView, Image} from 'react-native';
 import {
   Container,
   TopContainer,
@@ -9,10 +9,23 @@ import {
   ContainerButtonsActions,
   ButtonAccount,
   ContainerPayOrder,
+  TitleSeparator,
+  TopContainerPayOrder,
+  MiddleContainerParOrder,
+  BottomContainerPayOrder,
+  TittleBottomContainer,
+  TextMiddleContainer,
+  LeftTopContainerPayOrder,
+  RightTopContainerPayOrder,
+  TittleTextRightTopContainer,
+  SubtitleTextRightTopContainer,
 } from './styles';
 import {Avatar, Button} from 'react-native-paper';
+import boleto from '../../assets/img/boleto.png';
+import credito from '../../assets/img/credito.png';
+import qrcode from '../../assets/img/qr-code.png';
 
-export default function Home() {
+export default function Home({navigation}) {
   return (
     <ScrollView showsHorizontalScrollIndicator={false}>
       <Container>
@@ -42,8 +55,8 @@ export default function Home() {
             </Button>
           </LeftContainerBottom>
           <RightContainerBottom>
-            <Text>Saldo em Contas</Text>
-            <Text>R$ 648,32</Text>
+            <Text>Contas Cadastradas</Text>
+            <Text>3</Text>
             <Button
               style={{marginTop: 10, width: 150}}
               mode="contained"
@@ -53,20 +66,65 @@ export default function Home() {
           </RightContainerBottom>
         </BottomContainer>
         <ContainerButtonsActions>
-          <ButtonAccount>
-            <Text>Icone</Text>
-            <Text>Pagar Boleto</Text>
+          <ButtonAccount onPress={() => navigation.navigate('PayOrder')}>
+            <Image source={boleto} />
+            <Text
+              style={{
+                fontSize: 14,
+                lineHeight: 16,
+                color: '#666666',
+                marginTop: 10,
+              }}>
+              Pagar Boleto
+            </Text>
           </ButtonAccount>
-          <ButtonAccount>
-            <Text>Icone</Text>
-            <Text style={{fontSize: 14, lineHeight: 16, color: '#666666'}}>
+          <ButtonAccount onPress={() => navigation.navigate('PayOrderForMe')}>
+            <Image source={credito} />
+            <Text
+              style={{
+                fontSize: 14,
+                lineHeight: 16,
+                color: '#666666',
+                marginTop: 10,
+              }}>
               Solicitar Pagamento
             </Text>
           </ButtonAccount>
         </ContainerButtonsActions>
-        <Text>Boletos para Pagar</Text>
-        <ContainerPayOrder />
-        <Text>Boletos pagos</Text>
+        <TitleSeparator>Boletos para Pagar</TitleSeparator>
+        <ContainerPayOrder>
+          <TopContainerPayOrder>
+            <LeftTopContainerPayOrder>
+              <Image
+                source={qrcode}
+                style={{
+                  width: 50,
+                  height: 50,
+                  position: 'absolute',
+                  resizeMode: 'contain',
+                }}
+              />
+            </LeftTopContainerPayOrder>
+            <RightTopContainerPayOrder>
+              <TittleTextRightTopContainer>
+                Conta de Sabesp LTDA
+              </TittleTextRightTopContainer>
+              <SubtitleTextRightTopContainer>
+                3 dias restantes para pagar - Cadastrado há 3 min
+              </SubtitleTextRightTopContainer>
+            </RightTopContainerPayOrder>
+          </TopContainerPayOrder>
+          <MiddleContainerParOrder>
+            <TextMiddleContainer>
+              Meu primeiro boleto cadastrado na plataforma. Estou muito ansiosa
+              para paga-lo.
+            </TextMiddleContainer>
+          </MiddleContainerParOrder>
+          <BottomContainerPayOrder>
+            <TittleBottomContainer>R$ 63,11</TittleBottomContainer>
+          </BottomContainerPayOrder>
+        </ContainerPayOrder>
+        <TitleSeparator>Boletos pagos</TitleSeparator>
         <ContainerPayOrder />
       </Container>
     </ScrollView>
