@@ -7,7 +7,7 @@ export const Container = styled.View`
 `;
 
 export const TopContainer = styled.View`
-  padding: 20px 20px;
+  padding: 20px;
   width: 100%;
   background-color: yellow;
   border-top-left-radius: 15px;
@@ -17,7 +17,7 @@ export const TopContainer = styled.View`
 `;
 
 export const BottomContainer = styled.View`
-  padding: 20px;
+  padding: 15px;
   background-color: #fff;
   width: 100%;
   flex-direction: row;
@@ -25,13 +25,24 @@ export const BottomContainer = styled.View`
 `;
 
 export const LeftContainerBottom = styled.View`
-  height: 100px;
-  width: 45%;
-  background-color: blue;
+  height: 120px;
+  width: 48%;
+  background-color: yellow;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const RightContainerBottom = styled.View`
-  height: 100px;
-  width: 45%;
-  background-color: blue;
+  height: 120px;
+  width: 48%;
+  background-color: yellow;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ContainerButtonsActions = styled.View`
+  background-color: pink;
+  margin-top: 20px;
+  flex-direction: row;
+  justify-content: space-between;
 `;

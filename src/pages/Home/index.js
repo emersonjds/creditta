@@ -6,6 +6,7 @@ import {
   BottomContainer,
   RightContainerBottom,
   LeftContainerBottom,
+  ContainerButtonsActions,
 } from './styles';
 import {Avatar, Button} from 'react-native-paper';
 
@@ -27,9 +28,50 @@ export default function Home() {
         </Button>
       </TopContainer>
       <BottomContainer>
-        <LeftContainerBottom />
-        <LeftContainerBottom />
+        <LeftContainerBottom>
+          <Text>Saldo em Contas</Text>
+          <Text>R$ 648,32</Text>
+          <Button
+            style={{marginTop: 10, width: 150}}
+            mode="contained"
+            onPress={() => console.log('Pressed')}>
+            Ver Contas
+          </Button>
+        </LeftContainerBottom>
+        <RightContainerBottom>
+          <Text>Saldo em Contas</Text>
+          <Text>R$ 648,32</Text>
+          <Button
+            style={{marginTop: 10, width: 150}}
+            mode="contained"
+            onPress={() => console.log('Pressed')}>
+            Adicionar Conta
+          </Button>
+        </RightContainerBottom>
       </BottomContainer>
+
+      <ContainerButtonsActions>
+        <RightContainerBottom>
+          <Text>Saldo em Contas</Text>
+          <Text>R$ 648,32</Text>
+          <Button
+            style={{marginTop: 10, width: 150}}
+            mode="contained"
+            onPress={() => console.log('Pressed')}>
+            Adicionar Conta
+          </Button>
+        </RightContainerBottom>
+        <RightContainerBottom>
+          <Text>Saldo em Contas</Text>
+          <Text>R$ 648,32</Text>
+          <Button
+            style={{marginTop: 10, width: 150}}
+            mode="contained"
+            onPress={() => console.log('Pressed')}>
+            Adicionar Conta
+          </Button>
+        </RightContainerBottom>
+      </ContainerButtonsActions>
     </Container>
   );
 }
