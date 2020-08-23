@@ -7,11 +7,12 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import Home from './pages/Home';
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <Text>Emerson</Text>
+    <SafeAreaView style={{flex: 1}}>
+      <Home />
     </SafeAreaView>
   );
 }
