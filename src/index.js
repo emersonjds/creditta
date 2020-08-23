@@ -9,10 +9,16 @@ import {
 } from 'react-native';
 import Home from './pages/Home';
 
+import {NavigationContainer} from '@react-navigation/native';
+
+import Routes from './routes';
+
 export default function App() {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <Home />
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={{flex: 1}}>
+        <Routes />
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }

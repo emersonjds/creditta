@@ -17,9 +17,12 @@ export default function Home() {
           size={100}
           source={require('../../assets/img/avatar.jpg')}
         />
-        <Text>Emerson</Text>
-        <Text>Emerson</Text>
-        <Button mode="contained" onPress={() => console.log('Pressed')}>
+        <Text style={{marginTop: 10}}>@Marcela</Text>
+        <Text style={{marginTop: 10}}>Marcela Silva e Silva</Text>
+        <Button
+          style={{marginTop: 10}}
+          mode="contained"
+          onPress={() => console.log('Pressed')}>
           Editar
         </Button>
       </TopContainer>
