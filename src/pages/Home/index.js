@@ -39,7 +39,7 @@ export default function Home({navigation}) {
           <Button
             style={{marginTop: 10}}
             mode="contained"
-            onPress={() => console.log('Pressed')}>
+            onPress={() => navigation.navigate('Profile')}>
             Editar
           </Button>
         </TopContainer>
@@ -125,7 +125,37 @@ export default function Home({navigation}) {
           </BottomContainerPayOrder>
         </ContainerPayOrder>
         <TitleSeparator>Boletos pagos</TitleSeparator>
-        <ContainerPayOrder />
+        <ContainerPayOrder>
+          <TopContainerPayOrder>
+            <LeftTopContainerPayOrder>
+              <Image
+                source={qrcode}
+                style={{
+                  width: 50,
+                  height: 50,
+                  position: 'absolute',
+                  resizeMode: 'contain',
+                }}
+              />
+            </LeftTopContainerPayOrder>
+            <RightTopContainerPayOrder>
+              <TittleTextRightTopContainer>
+                Boleto da Vivo SA
+              </TittleTextRightTopContainer>
+              <SubtitleTextRightTopContainer>
+                Vencido ontem - Conta paga{' '}
+              </SubtitleTextRightTopContainer>
+            </RightTopContainerPayOrder>
+          </TopContainerPayOrder>
+          <MiddleContainerParOrder>
+            <TextMiddleContainer>
+              Mentira! Já tinha cadastrado este outro boleto aqui
+            </TextMiddleContainer>
+          </MiddleContainerParOrder>
+          <BottomContainerPayOrder>
+            <TittleBottomContainer>R$ 12,25</TittleBottomContainer>
+          </BottomContainerPayOrder>
+        </ContainerPayOrder>
       </Container>
     </ScrollView>
   );
