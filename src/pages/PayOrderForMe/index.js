@@ -222,8 +222,7 @@ export default function PayOrderForMe() {
             </ContainerTop>
 
             <Button
-              title="Hide modal"
-              onPress={() => {}}
+              onPress={toggleModal}
               mode="contained"
               style={{
                 width: 300,
