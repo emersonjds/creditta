@@ -7,12 +7,25 @@ import Home from './pages/Home';
 import PayOrder from './pages/PayOrder';
 import PayOrderForMe from './pages/PayOrderForMe';
 import Profile from './pages/Profile';
+import ReceiptOrder from './pages/ReceiptOrder';
 
 const Stack = createStackNavigator();
 
 export default function Routes() {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="ReceiptOrder"
+        component={ReceiptOrder}
+        options={{
+          headerShown: true,
+          title: 'Ordem de Pagamento',
+          headerTintColor: '#FFF',
+          headerStyle: {
+            backgroundColor: '#8257E5',
+          },
+        }}
+      />
       <Stack.Screen
         name="PayOrderForMe"
         component={PayOrderForMe}
@@ -52,6 +65,7 @@ export default function Routes() {
         options={{
           headerShown: true,
           title: 'Perfil',
+          headerTintColor: '#FFF',
           headerStyle: {
             backgroundColor: '#8257E5',
           },
