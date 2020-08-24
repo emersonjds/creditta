@@ -15,6 +15,12 @@ export default function Routes() {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{headerShown: false}}
+      />
+
+      <Stack.Screen
         name="PayOrder"
         component={PayOrder}
         options={{
@@ -25,11 +31,6 @@ export default function Routes() {
             backgroundColor: '#8257E5',
           },
         }}
-      />
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{headerShown: false}}
       />
 
       <Stack.Screen

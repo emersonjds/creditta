@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {Text, SafeAreaView, View, ScrollView, Image} from 'react-native';
 import {
   Container,
@@ -21,14 +21,33 @@ import {
   SubtitleTextRightTopContainer,
 } from './styles';
 import {Avatar, Button} from 'react-native-paper';
-import boleto from '../../assets/img/boleto.png';
-import credito from '../../assets/img/credito.png';
+import boleto from '../../assets/img/boleto-colorido-1.png';
+import credito from '../../assets/img/credito-colorido-1.png';
 import qrcode from '../../assets/img/qr-code.png';
+import boleto_2 from '../../assets/img/boleto-colorido-2.png';
+import {Modalize} from 'react-native-modalize';
+import {TextInput} from 'react-native-paper';
 
 export default function Home({navigation}) {
+  const modalizeRef = useRef(<Modalize />);
+
+  const onOpen = () => {
+    modalizeRef.current?.open();
+  };
+
   return (
     <ScrollView showsHorizontalScrollIndicator={false}>
       <Container>
+        <View
+          style={{
+            height: 200,
+            position: 'absolute',
+            backgroundColor: '#8257E5',
+            width: '120%',
+            borderBottomRightRadius: 20,
+            borderLeftRightRadius: 20,
+          }}
+        />
         <TopContainer>
           <Avatar.Image
             size={100}
@@ -39,30 +58,28 @@ export default function Home({navigation}) {
           <Button
             style={{marginTop: 10}}
             mode="contained"
-            onPress={() => navigation.navigate('Profile')}>
+            onPress={onOpen}
+            color={'#8257E5'}>
             Editar
           </Button>
         </TopContainer>
         <BottomContainer>
           <LeftContainerBottom>
-            <Text>Saldo em Contas</Text>
-            <Text>R$ 648,32</Text>
+            <Text style={{fontSize: 16, color: '#8257E5'}}>
+              Boletos em Aberto
+            </Text>
+            <Text style={{fontSize: 18, color: '#8257E5'}}>R$ 413,29</Text>
             <Button
               style={{marginTop: 10, width: 150}}
               mode="contained"
-              onPress={() => console.log('Pressed')}>
+              onPress={() => navigation.navigate('PayOrder')}
+              color={'#8257E5'}>
               Ver Contas
             </Button>
           </LeftContainerBottom>
           <RightContainerBottom>
-            <Text>Contas Cadastradas</Text>
-            <Text>3</Text>
-            <Button
-              style={{marginTop: 10, width: 150}}
-              mode="contained"
-              onPress={() => console.log('Pressed')}>
-              Adicionar Conta
-            </Button>
+            <Text style={{fontSize: 18, color: '#8257E5'}}>Contas Pagas</Text>
+            <Text style={{fontSize: 18, color: '#8257E5'}}>3</Text>
           </RightContainerBottom>
         </BottomContainer>
         <ContainerButtonsActions>
@@ -91,12 +108,12 @@ export default function Home({navigation}) {
             </Text>
           </ButtonAccount>
         </ContainerButtonsActions>
-        <TitleSeparator>Boletos para Pagar</TitleSeparator>
+        <TitleSeparator>Ultimos Boletos Pagos</TitleSeparator>
         <ContainerPayOrder>
           <TopContainerPayOrder>
             <LeftTopContainerPayOrder>
               <Image
-                source={qrcode}
+                source={boleto_2}
                 style={{
                   width: 50,
                   height: 50,
@@ -110,14 +127,13 @@ export default function Home({navigation}) {
                 Conta de Sabesp LTDA
               </TittleTextRightTopContainer>
               <SubtitleTextRightTopContainer>
-                3 dias restantes para pagar - Cadastrado há 3 min
+                Pago em 22/08/2020
               </SubtitleTextRightTopContainer>
             </RightTopContainerPayOrder>
           </TopContainerPayOrder>
           <MiddleContainerParOrder>
             <TextMiddleContainer>
-              Meu primeiro boleto cadastrado na plataforma. Estou muito ansiosa
-              para paga-lo.
+              Meu primeiro boleto pago na plataforma.
             </TextMiddleContainer>
           </MiddleContainerParOrder>
           <BottomContainerPayOrder>
@@ -129,7 +145,7 @@ export default function Home({navigation}) {
           <TopContainerPayOrder>
             <LeftTopContainerPayOrder>
               <Image
-                source={qrcode}
+                source={boleto_2}
                 style={{
                   width: 50,
                   height: 50,
@@ -143,20 +159,59 @@ export default function Home({navigation}) {
                 Boleto da Vivo SA
               </TittleTextRightTopContainer>
               <SubtitleTextRightTopContainer>
-                Vencido ontem - Conta paga{' '}
+                Vencido ontem - Conta paga em 24/08/2020{' '}
               </SubtitleTextRightTopContainer>
             </RightTopContainerPayOrder>
           </TopContainerPayOrder>
           <MiddleContainerParOrder>
             <TextMiddleContainer>
-              Mentira! Já tinha cadastrado este outro boleto aqui
+              Este boleto foi pago com atraso, tome mais cuidado na proxima
             </TextMiddleContainer>
           </MiddleContainerParOrder>
           <BottomContainerPayOrder>
-            <TittleBottomContainer>R$ 12,25</TittleBottomContainer>
+            <TittleBottomContainer>R$ 122,25</TittleBottomContainer>
           </BottomContainerPayOrder>
         </ContainerPayOrder>
       </Container>
+      <Modalize ref={modalizeRef} modalHeight={600}>
+        <View style={{padding: 30}}>
+          <TextInput
+            style={{marginBottom: 15}}
+            label="Usuario"
+            value={'@marcelasilva'}
+            type="flat"
+            disable={true}
+          />
+          <TextInput
+            style={{marginBottom: 15}}
+            label="Nome Completo"
+            value={'Marcela Silva e Silva'}
+            type="flat"
+            disable={true}
+          />
+          <TextInput
+            style={{marginBottom: 15}}
+            label="CPF"
+            value={'801.726.440-20'}
+            type="flat"
+            disable={true}
+          />
+          <TextInput
+            style={{marginBottom: 10}}
+            label="Senha"
+            value={'*****************'}
+            type="flat"
+            disable={true}
+          />
+          <Button
+            style={{marginTop: 10}}
+            mode="contained"
+            onPress={onOpen}
+            color={'#8257E5'}>
+            Salvar
+          </Button>
+        </View>
+      </Modalize>
     </ScrollView>
   );
 }

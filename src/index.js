@@ -17,7 +17,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <>
-        <SafeAreaView style={{flex: 1, backgroundColor: '#cecece'}}>
+        <SafeAreaView style={{flex: 1, backgroundColor: '#FFF'}}>
           <Routes />
         </SafeAreaView>
       </>

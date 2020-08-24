@@ -25,7 +25,7 @@ import {
   TitleContainerTitleCircle,
   ContainerOptionBilling,
 } from './styles.js';
-import credito from '../../assets/img/credito.png';
+import credito from '../../assets/img/credito-colorido-1.png';
 import {Button} from 'react-native-paper';
 import remove from '../../assets/img/remover.png';
 import claro from '../../assets/img/claro.png';
@@ -83,7 +83,7 @@ export default function PayOrderForMe() {
         <ContainerTitleCircle>
           <Circle />
           <TitleContainerTitleCircle>
-            Selecionar Boletos
+            Boletos Selecionados Para Pagamento
           </TitleContainerTitleCircle>
         </ContainerTitleCircle>
 
@@ -246,9 +246,9 @@ export default function PayOrderForMe() {
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
-              <Text>
-                Tudo certo, iremos analisar os boletos enviados e voce receberá
-                o informe por email
+              <Text style={{fontSize: 18}}>
+                Tudo certo, iremos analisar os boletos enviados para pagamento e
+                voce recebera por email a notificação
               </Text>
 
               <Button

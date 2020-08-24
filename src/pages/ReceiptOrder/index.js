@@ -10,7 +10,7 @@ import {
   TitleDocument,
   Subtitle,
 } from './styles';
-import credito from '../../assets/img/credito.png';
+import credito from '../../assets/img/credito-colorido-1.png';
 
 export default function ReceiptOrder() {
   return (
@@ -27,7 +27,7 @@ export default function ReceiptOrder() {
 
       <ContainerInformation>
         <TitleDocument>Descrição</TitleDocument>
-        <Subtitle>Sabesp SA</Subtitle>
+        <Subtitle>Sabesp SA, Claro SA, Net Claro SA</Subtitle>
       </ContainerInformation>
       <ContainerInformation>
         <TitleDocument>Vencimento</TitleDocument>
@@ -35,7 +35,7 @@ export default function ReceiptOrder() {
       </ContainerInformation>
       <ContainerInformation>
         <TitleDocument>Valor do Documento</TitleDocument>
-        <Subtitle>RS 236,40</Subtitle>
+        <Subtitle>RS 612,26,40</Subtitle>
       </ContainerInformation>
       <ContainerInformation>
         <TitleDocument>Chave de Validação</TitleDocument>
