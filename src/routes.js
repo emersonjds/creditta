@@ -15,11 +15,35 @@ export default function Routes() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="ReceiptOrder"
-        component={ReceiptOrder}
+        name="PayOrder"
+        component={PayOrder}
         options={{
           headerShown: true,
-          title: 'Ordem de Pagamento',
+          title: 'Meus boletos',
+          headerTintColor: '#FFF',
+          headerStyle: {
+            backgroundColor: '#8257E5',
+          },
+        }}
+      />
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{headerShown: false}}
+      />
+
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{headerShown: false}}
+      />
+
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          headerShown: true,
+          title: 'Perfil',
           headerTintColor: '#FFF',
           headerStyle: {
             backgroundColor: '#8257E5',
@@ -38,33 +62,11 @@ export default function Routes() {
         }}
       />
       <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{headerShown: false}}
-      />
-
-      <Stack.Screen
-        name="Login"
-        component={Login}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="PayOrder"
-        component={PayOrder}
+        name="ReceiptOrder"
+        component={ReceiptOrder}
         options={{
           headerShown: true,
-          title: 'Pagando um boleto',
-          headerStyle: {
-            backgroundColor: '#8257E5',
-          },
-        }}
-      />
-      <Stack.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          headerShown: true,
-          title: 'Perfil',
+          title: 'Ordem de Pagamento',
           headerTintColor: '#FFF',
           headerStyle: {
             backgroundColor: '#8257E5',
