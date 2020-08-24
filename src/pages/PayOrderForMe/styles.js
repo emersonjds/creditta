@@ -89,3 +89,5 @@ export const Circle = styled.View`
   border-radius: 10px;
   background-color: #000;
 `;
+
+export const ContainerOptionBilling = styled.View``;
