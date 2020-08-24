@@ -16,9 +16,11 @@ import Routes from './routes';
 export default function App() {
   return (
     <NavigationContainer>
-      <SafeAreaView style={{flex: 1}}>
-        <Routes />
-      </SafeAreaView>
+      <>
+        <SafeAreaView style={{flex: 1, backgroundColor: '#FFF'}}>
+          <Routes />
+        </SafeAreaView>
+      </>
     </NavigationContainer>
   );
 }
